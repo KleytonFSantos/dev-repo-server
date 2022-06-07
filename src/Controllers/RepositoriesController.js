@@ -35,7 +35,7 @@ class RepositoriesController {
 
             const repository = await Repository.findOne({
                 userId: user_id,
-                name,
+                url,
             })
 
             if (repository){
@@ -69,9 +69,11 @@ class RepositoriesController {
                 id,
                 userId: user_id
             });
+
             if(!repository){
                 return res.status(404).json();
             }
+            
             await repository.deleteOne()
 
             return res.status(200).json({ message: `Repository ${repository.name} was deleted successfully.`});
