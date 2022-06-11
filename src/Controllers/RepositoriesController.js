@@ -20,6 +20,7 @@ class RepositoriesController {
 
             const repositories = await Repository.find({
                 userId: user_id,
+                ...query
             });
 
             return res.json(repositories);
