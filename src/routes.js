@@ -11,7 +11,7 @@ routes.get('/hello', HelloController.index);
 
 routes.post('/sessions', SessionsController.create);
 
-routes.use(auth);
+//routes.use(auth);
 
 routes.get('/users', UsersController.index);
 routes.get('/users/:id', UsersController.show);
